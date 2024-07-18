@@ -6,7 +6,7 @@
  */
 function setupDominantSpeakerUpdates(room, updateDominantSpeaker) {
     room.on('dominantSpeakerChanged', function(participant) {
-      console.log('A new RemoteParticipant is now the dominant speaker:', participant);
+      // console.log('A new RemoteParticipant is now the dominant speaker:', participant);
       updateDominantSpeaker(participant);
     });
   }
