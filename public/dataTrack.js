@@ -33,15 +33,15 @@ async function connectToRoomWithDataTrack(token, roomName) {
    * @param {Function} onMessageReceived - Updates UI when a message is received
    */
   function receiveChatMessages(room, onMessageReceived) {
-    // console.log("On Message Received")
+    console.log("On Message Received")
     room.participants.forEach(function(participant) {
-      // console.log(`Participant:${participant}`)
+      console.log(`Participant:${participant}`)
       participant.dataTracks.forEach(function(publication) {        
-        // console.log(`Publication: ${publication}`)
+        console.log(`Publication: ${publication}`)
         if (publication.isSubscribed && publication.trackName === 'chat') {
-          // console.log("receiving chat")
+          console.log("receiving chat")
           publication.track.on('message', function(msg) {
-            // console.log(msg)
+            console.log(msg)            
             onMessageReceived(msg, participant);
           });
         }

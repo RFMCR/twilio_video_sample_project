@@ -10,7 +10,7 @@ async function createScreenTrack(height, width) {
         width: width
       }
     }).then(function(stream) {
-      return new Twilio.Video.LocalVideoTrack(stream.getVideoTracks()[0]);
+      return new Twilio.Video.LocalVideoTrack(stream.getVideoTracks()[0], { name: 'ShareScreen' });
     });
   }
   
